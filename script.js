@@ -76,7 +76,7 @@ const defaultResponses = [
     "Smoke on the water",
     "W dzień wypłaty wątroba dostaje baty",
     "Przesiałeś piach?",
-    "Muszę przyznać, że autorowi nie chciało się poprcować nad CSSami"
+    "Muszę przyznać, że autorowi nie chciało się popracować nad CSSami"
 ];
 
 // Losowanie odpowiedzi z tablicy 
