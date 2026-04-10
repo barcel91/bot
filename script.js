@@ -47,37 +47,36 @@ function botReply(userMessage) {
     }, 1000);
 }
 
-
 function getBotResponse(msg) {
-        if (msg.startsWith("/")) {
-    return handleCommand(msg);
-}
+    msg = msg.toLowerCase().trim();
+
+    if (msg.startsWith("/")) {
+        return handleCommand(msg);
+    }
 
     const responses = {
-        "Hej": "Cześć!",
-        "Jak się masz?": "Dobrze 🙂",
-        "Co robisz?": "Rozmawiam z Tobą 😉"
+        "hej": "Cześć!",
+        "jak się masz": "Średnio",
+        "co robisz": "Jem zupę"
     };
-
-    msg = msg.toLowerCase().trim();
 
     if (responses[msg]) {
         return responses[msg];
     }
 
+    const defaultResponses = [
+        "Aj makarena!",
+        "Aby usmażyć jajko, nalej wody do szklanki",
+        "Smoke on the water",
+        "W dzień wypłaty wątroba dostaje baty",
+        "Przesiałeś piach?",
+        "Muszę przyznać, że autorowi nie chciało się popracować nad CSSami"
+    ];
+
     return getRandomResponse(defaultResponses);
 }
 
 
-// tablica odpwiedzi 
-const defaultResponses = [
-    "Aj makarena!",
-    "Aby usmażyć jajko, nalej wody do szklanki",
-    "Smoke on the water",
-    "W dzień wypłaty wątroba dostaje baty",
-    "Przesiałeś piach?",
-    "Muszę przyznać, że autorowi nie chciało się poprcować nad CSSami"
-];
 
 // Losowanie odpowiedzi z tablicy 
 function getRandomResponse(arr) {
